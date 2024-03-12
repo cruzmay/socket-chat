@@ -1,0 +1,70 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Denied</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 mt-3">
+          <h1>google sign in</h1>
+          <hr />
+          <div
+            id="g_id_onload"
+            data-client_id="334365156791-000ksfcbrqt7dlj93udle6o5icp5momo.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-login_uri="http://localhost:8080/"
+            data-auto_prompt="false"
+            data-callback="handleCredentialResponse"
+          ></div>
+          <div
+            class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="signin_with"
+            data-size="large"
+            data-logo_alignment="left"
+          ></div>
+          <button class="btn btn-primary" id="sign_out">Sign Out</button>
+        </div>
+        <div class="col-sm-6 mt-5">
+          <div class="alert  alert-danger" style="display: none;" role="alert">
+            user not found</div>
+          </div>
+          <form>
+            <input
+              type="text"
+              name="email"
+              class="form-control mb-2"
+              placeholder="email"
+            />
+            <input
+              type="text"
+              name="password"
+              class="form-control mb-2"
+              placeholder="password"
+            />
+            <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+          </form>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="./js/auth.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
