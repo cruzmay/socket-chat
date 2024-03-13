@@ -50,13 +50,13 @@ function handleCredentialResponse(response) {
   };
   apiCall();
 }
-// const button = document.querySelector("#sign_out");
-// button.addEventListener("click", handleSignOut);
-// function handleSignOut() {
-//   console.log(google.accounts.id);
-//   google.accounts.id.disableAutoSelect();
-//   google.accounts.id.revoke(localStorage.getItem("email"), (done) => {
-//     localStorage.clear();
-//     location.reload();
-//   });
-// }
+const button = document.querySelector("#sign_out");
+button.addEventListener("click", handleSignOut);
+function handleSignOut() {
+  console.log(google.accounts.id);
+  google.accounts.id.disableAutoSelect();
+  google.accounts.id.revoke(localStorage.getItem("email"), (done) => {
+    localStorage.clear();
+    location.reload();
+  });
+}

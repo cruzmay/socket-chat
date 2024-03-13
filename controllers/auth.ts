@@ -71,10 +71,14 @@ const googleSignIn = async (
 };
 const getValidUser = async (req: Request, res: Response) => {
 
-  const { user }: any = req;
-  const token = await generateJWT(user._id);
-
-  res.json({user, token})
+  try {
+    const { user }: any = req;
+    console.log("auth", user)
+    const token = await generateJWT(user._id);
+    res.json({user, token})
+  } catch (error) {
+    res.status(400).json({msg: "no user found"})
+  }
 }
 
 export { authPost, googleSignIn, getValidUser };

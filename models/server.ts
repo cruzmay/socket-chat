@@ -45,7 +45,7 @@ export class Server {
     this.app.use(this.paths.auth, authRouter);
   }
   public socket(){
-    this.io.on("connection", socketController)
+    this.io.on("connection", (socket) => socketController(socket, this.io))
   }
   public listen() {
     this.server.listen(this.port, () => {
